@@ -2,10 +2,10 @@ var path        = require('path'),
     fs          = require('fs'),
     merge       = require('merge'),
     express     = require('express'),
-    browserSync = require('browser-sync'),
-    nunjucks    = require('express-nunjucks'),
+    expressNunjucks = require('express-nunjucks'),
     _           = require('underscore'),
     moment      = require('moment'),
+    glob = require('glob'),
     routes      = require(__dirname + '/app/routes.js'),
     dis_routes  = require(__dirname + '/app/views/display/routes.js'),
     favicon     = require('serve-favicon'),
@@ -16,16 +16,14 @@ var path        = require('path'),
 /*
   Load all the project data from the files.
 */
-var defaults = JSON.parse(fs.readFileSync(__dirname + '/lib/projects/defaults.json').toString());
-var files = fs.readdirSync(__dirname + '/lib/projects/');
+var defaults = require('./lib/projects/defaults.json');
+var files = glob.sync(__dirname + '/lib/projects/*.json');
 app.locals.data = [];
-_.each(files,function(el)
-{
-  if (el == 'defaults.json') return;
-  var file = fs.readFileSync(__dirname + '/lib/projects/'+el).toString();
+_.each(files, function(file) {
+  if (file.endsWith('defaults.json')) return;
   try {
-    var json = merge(true,defaults,JSON.parse(file));
-    json.filename = el;
+    var json = merge(true, defaults, require(file));
+    json.filename = file;
     app.locals.data.push(json);
   } catch(err) {
     console.log(err);
@@ -38,28 +36,27 @@ app.set('views', [__dirname + '/app/views/', __dirname + '/lib/']);
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
-app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
-app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
-app.use('/public/images/icons', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit/images'));
+app.use('/public', express.static(__dirname + '/node_modules/govuk_template_mustache/assets'));
+app.use('/public', express.static(__dirname + '/node_modules/govuk_frontend_toolkit'));
 
-nunjucks.setup({
+var nunjucks = expressNunjucks(app, {
     autoescape: true,
     watch: true
-}, app, function(env) {
-  env.addFilter('slugify', function(str) {
-      return str.replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()’]/g,"").replace(/ +/g,'_').toLowerCase();
-  });
-  env.addFilter('formatDate', function(str,format) {
-      return moment(str).format(format);
-  });
-  env.addFilter('log', function log(a) {
-    var nunjucksSafe = env.getFilter('safe');
-  	return nunjucksSafe('<script>console.log(' + JSON.stringify(a, null, '\t') + ');</script>');
-  });
+});
+
+nunjucks.env.addFilter('slugify', function(str) {
+    return str.replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()’]/g,"").replace(/ +/g,'_').toLowerCase();
+});
+nunjucks.env.addFilter('formatDate', function(str,format) {
+    return moment(str).format(format);
+});
+nunjucks.env.addFilter('log', function log(a) {
+  var nunjucksSafe = env.getFilter('safe');
+	return nunjucksSafe('<script>console.log(' + JSON.stringify(a, null, '\t') + ');</script>');
 });
 
 // Elements refers to icon folder instead of images folder
-app.use(favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico')));
+app.use(favicon(path.join(__dirname, 'node_modules', 'govuk_template_mustache', 'assets', 'images','favicon.ico')));
 
 // send assetPath to all views
 app.use(function (req, res, next) {
@@ -104,21 +101,7 @@ app.get(/^\/([^.]+)$/, function (req, res)
 });
 
 // start the app
-if (env === 'production') {
-  app.listen(port);
-} else {
-  // for development use browserSync as well
-  app.listen(port,function()
-  {
-    browserSync({
-      proxy:'localhost:'+port,
-      files:['public/**/*.{js,css}','app/views/**/*.html'],
-      ghostmode:{clicks:true, forms: true, scroll:true},
-      open:false,
-      port:(port+1),
-    });
-  });
-}
+app.listen(port);
 
 console.log('');
 console.log('Listening on port ' + port);

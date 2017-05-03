@@ -12,6 +12,12 @@
 
 }
 
+$backlog-colour: $purple;
+$discovery-colour: $fuschia;
+$alpha-colour: $pink;
+$beta-colour: $orange;
+$live-colour: $grass-green;
+
 /* Little tag in header. */
 .alpha-tag {
   background-color:$alpha-colour;
@@ -27,8 +33,6 @@
   #global-header .header-wrapper .header-global .header-logo {width:100%;}
 }
 #footer {display:none}
-
-$backlog-colour: $purple;
 
 /*
   Top of the page phase banner bits.
