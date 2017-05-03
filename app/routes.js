@@ -8,12 +8,7 @@ var express = require('express'),
   A way to force the ordering of the themes.
 */
 var theme_order = [
-      // 'Universal Credit',
-      'Health & Disability',
-      'Working Age',
-      'Retirement Provision',
-      'Fraud & Debt',
-      'Platforms'
+
     ];
 
 var priority_order = [
@@ -124,9 +119,9 @@ router.get('/priority/', function (req, res)
 /*
   - - - - - - - - - -  PROJECT PAGE - - - - - - - - - -
 */
-router.get('/projects/:id/:slug', function (req, res)
+router.get('/projects/:slug', function (req, res)
 {
-  var data = _.findWhere(req.app.locals.data, {id:parseInt(req.params.id)});
+  var data = _.findWhere(req.app.locals.data, {id: req.params.id});
   res.render('project', {
     "data":data,
     "phase_order":phase_order,
@@ -136,10 +131,9 @@ router.get('/projects/:id/:slug', function (req, res)
 /*
   - - - - - - - - - -  PROTOTYPE REDRIECT - - - - - - - - - -
 */
-router.get('/projects/:id/:slug/prototype', function (req, res)
+router.get('/projects/:id/prototype', function (req, res)
 {
-  var id = req.params.id;
-  var data = _.findWhere(req.app.locals.data, {id:parseInt(id)});
+  var data = _.findWhere(req.app.locals.data, {id:req.params.id});
   if (typeof data.prototype == 'undefined')
   {
     res.render('no-prototype',{
@@ -160,7 +154,7 @@ router.get('/api', function (req, res) {
 });
 
 router.get('/api/:id', function (req, res) {
-  var data = _.findWhere(req.app.locals.data, {id: (parseInt(req.params.id))});
+  var data = _.findWhere(req.app.locals.data, {id: req.params.id});
   if (data) {
     res.json(data);
   } else {

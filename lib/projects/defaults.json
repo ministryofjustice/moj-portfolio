@@ -1,5 +1,5 @@
 {
-  "id":0,
+  "id":"url-slug",
   "name":"Name Of Project",
   "description": "Description of project",
   "theme": "Platforms",
@@ -16,7 +16,7 @@
     ],
     "discovery": [
       {"label":"", "date": ""},
-      {"label":"", "date": ""}  
+      {"label":"", "date": ""}
     ]
   },
   "facing":"user",
