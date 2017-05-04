@@ -1,29 +1,31 @@
-var express = require('express'),
-    router  = express.Router(),
-    moment  = require('moment'),
-    tog     = require(__dirname + "/../lib/tog.js"),
-    _       = require('underscore');
+var express = require('express');
+var moment = require('moment');
+var _ = require('lodash');
+
+var projects = require('./data/projects');
+
+var router = express.Router();
 
 /*
   A way to force the ordering of the themes.
 */
 var theme_order = [
-
-    ];
+  'Legacy Replatforming'
+];
 
 var priority_order = [
-      'Top',
-      'High',
-      'Medium',
-      'Low'
-    ];
+  'Top',
+  'High',
+  'Medium',
+  'Low'
+];
 
 var priority_descriptions = {
-      "Top":"",
-      "High":"",
-      "Medium":"",
-      "Low":""
-    };
+  "Top":"",
+  "High":"",
+  "Medium":"",
+  "Low":""
+};
 
 /*
   A way to force the ordering of the phases.
@@ -56,9 +58,9 @@ function indexify(data)
 */
 router.get('/', function (req, res)
 {
-  var data = _.groupBy(req.app.locals.data, 'theme');
+  var data = _.groupBy(projects, 'theme');
   var new_data = indexify(data);
-  var phases = _.countBy(req.app.locals.data, 'phase');
+  var phases = _.countBy(projects, 'phase');
   res.render('index', {
     "data":new_data,
     "counts":phases,
@@ -69,12 +71,16 @@ router.get('/', function (req, res)
   );
 });
 
+router.get('/about', (req, res) => {
+  res.render('about');
+});
+
 /*
   - - - - - - - - - -  LOCATION INDEX PAGE - - - - - - - - - -
 */
 router.get('/location/', function (req, res)
 {
-  var data = _.groupBy(req.app.locals.data, 'location');
+  var data = _.groupBy(projects, 'location');
   var new_data = indexify(data);
 
   var loc_order = [];
@@ -84,7 +90,7 @@ router.get('/location/', function (req, res)
   });
   loc_order.sort();
 
-  var phases = _.countBy(req.app.locals.data, 'phase');
+  var phases = _.countBy(projects, 'phase');
   res.render('index', {
     "data":new_data,
     "counts":phases,
@@ -100,10 +106,10 @@ router.get('/location/', function (req, res)
 */
 router.get('/priority/', function (req, res)
 {
-  var data = _.groupBy(req.app.locals.data, 'priority');
+  var data = _.groupBy(projects, 'priority');
   var new_data = indexify(data);
 
-  var phases = _.countBy(req.app.locals.data, 'phase');
+  var phases = _.countBy(projects, 'phase');
 
   res.render('index', {
     "data":new_data,
@@ -119,9 +125,9 @@ router.get('/priority/', function (req, res)
 /*
   - - - - - - - - - -  PROJECT PAGE - - - - - - - - - -
 */
-router.get('/projects/:slug', function (req, res)
+router.get('/projects/:id', function (req, res)
 {
-  var data = _.findWhere(req.app.locals.data, {id: req.params.id});
+  var data = _.find(projects, {id: req.params.id});
   res.render('project', {
     "data":data,
     "phase_order":phase_order,
@@ -133,7 +139,7 @@ router.get('/projects/:slug', function (req, res)
 */
 router.get('/projects/:id/prototype', function (req, res)
 {
-  var data = _.findWhere(req.app.locals.data, {id:req.params.id});
+  var data = _.find(projects, {id:req.params.id});
   if (typeof data.prototype == 'undefined')
   {
     res.render('no-prototype',{
@@ -149,12 +155,11 @@ router.get('/projects/:id/prototype', function (req, res)
 */
 
 router.get('/api', function (req, res) {
-  console.log(req.app.locals.data);
-  res.json(req.app.locals.data);
+  res.json(projects);
 });
 
 router.get('/api/:id', function (req, res) {
-  var data = _.findWhere(req.app.locals.data, {id: req.params.id});
+  var data = _.find(projects, {id: req.params.id});
   if (data) {
     res.json(data);
   } else {
@@ -167,7 +172,7 @@ router.get('/showntells/all/:loc?', function (req, res, next)
   var loc = req.params.loc;
 
   var data = [];
-  _.each(req.app.locals.data, function(el)
+  _.each(projects, function(el)
   {
     if (el.showntells)
     _.each(el.showntells, function(sup)
@@ -187,19 +192,18 @@ router.get('/showntells/all/:loc?', function (req, res, next)
   req.data = req.data || {};
   req.data.all = true;
   req.data.loc = loc;
-  req.data.places = _.unique(_.pluck(req.app.locals.data,'location'));
+  req.data.places = _.unique(_.pluck(projects,'location'));
   req.data.showntells = _.sortBy(data, "date");
 
   req.url = '/showntells';
   next();
-  // res.end(tog(newdata))
 });
 
 router.get('/showntells/today/:loc?', function (req, res, next)
 {
   var loc = req.params.loc;
   var data = [];
-  _.each(req.app.locals.data, function(el)
+  _.each(projects, function(el)
   {
     if (el.showntells)
     _.each(el.showntells, function(sup)
@@ -222,7 +226,7 @@ router.get('/showntells/today/:loc?', function (req, res, next)
   req.data = req.data || {};
   req.data.today = true;
   req.data.loc = loc;
-  req.data.places = _.unique(_.pluck(req.app.locals.data,'location'));
+  req.data.places = _.unique(_.pluck(projects,'location'));
   req.data.showntells = _.sortBy(data, "date");
   req.url = '/showntells';
   next();

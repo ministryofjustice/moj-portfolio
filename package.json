@@ -13,6 +13,7 @@
     "glob": "^7.1.1",
     "govuk_frontend_toolkit": "^5.2.0",
     "govuk_template_mustache": "^0.19.2",
+    "lodash": "^4.17.4",
     "merge": "^1.2.0",
     "moment": "^2.18.1",
     "node-sass": "^4.5.2",
@@ -20,7 +21,7 @@
     "sass-loader": "^6.0.3",
     "serve-favicon": "^2.4.2",
     "style-loader": "^0.17.0",
-    "underscore": "^1.8.3",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-dev-middleware": "^1.10.2"
   }
 }

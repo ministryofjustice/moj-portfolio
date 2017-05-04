@@ -1,5 +1,5 @@
 var express     = require('express'),
-    _           = require("underscore"),
+    _           = require("lodash"),
     router      = express.Router();
 
 router.get('/display/:number?/:location?', function(req,res,next)
