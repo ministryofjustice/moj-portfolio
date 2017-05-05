@@ -1,9 +1,5 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-	HMPPS Digital Studio Services
-{% endblock %}
-
 {% block content %}
 
 <main id="content" role="main">
@@ -42,30 +38,26 @@
 		so them can be used in multiple pages.
 	#}
 
-	{% for name in theme_order %}
+	{% for theme in themes %}
 
-		{% set item = data[name] %}
-		<h2 class="heading-large service-area">{{ name }}</h2>
-
-		{% if view == 'priority' %}
-		<p>{{ priority_descriptions[name] }}</p>
-		{% endif %}
+		{% set themeProjects = data[theme] %}
+		<h2 class="heading-large service-area">{{ theme }}</h2>
 
 		<div class="grid-row">
-		{% for phase in phase_order %}
+		{% for phase in phases %}
 
 			<section class="column-fifth">
-			{% if item[phase] %}
+			{% if themeProjects[phase] %}
 
 				<ul class="link-list border-{{phase}}">
-				{% for bit in item[phase]['user'] %}
-					<li><a href="/projects/{{ bit.id }}">{{ bit.name }}</a></li>
+				{% for project in themeProjects[phase]['user'] %}
+					<li><a href="/projects/{{ project.id }}">{{ project.name }}</a></li>
 				{% endfor %}
 				</ul>
 
 				<ul class="link-list border-internal">
-				{% for bit in item[phase]['internal'] %}
-					<li><a href="/projects/{{ bit.id }}">{{ bit.name }}</a></li>
+				{% for project in themeProjects[phase]['internal'] %}
+					<li><a href="/projects/{{ project.id }}">{{ project.name }}</a></li>
 				{% endfor %}
 				</ul>
 

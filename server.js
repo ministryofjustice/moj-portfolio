@@ -1,10 +1,10 @@
 var path = require('path');
 var express = require('express');
 var expressNunjucks = require('express-nunjucks');
+var morgan = require('morgan');
+var favicon = require('serve-favicon');
 
 var routes = require('./app/routes.js');
-var dis_routes = require('./app/views/display/routes.js');
-var favicon = require('serve-favicon');
 
 var app = express();
 
@@ -16,15 +16,6 @@ app.set('views', [
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ]);
-
-// Middleware to serve static assets
-[
-  '/public',
-  '/node_modules/govuk_template_mustache/assets',
-  '/node_modules/govuk_frontend_toolkit'
-].forEach((folder) => {
-  app.use('/public', express.static(path.join(__dirname, folder)));
-});
 
 var nunjucks = expressNunjucks(app, {
     autoescape: true,
@@ -38,24 +29,45 @@ nunjucks.env.addFilter('formatDate', function(str,format) {
 });
 nunjucks.env.addFilter('log', function log(a) {
   var nunjucksSafe = env.getFilter('safe');
-	return nunjucksSafe('<script>console.log(' + JSON.stringify(a, null, '\t') + ');</script>');
+  return nunjucksSafe('<script>console.log(' + JSON.stringify(a, null, '\t') + ');</script>');
 });
 
-// Elements refers to icon folder instead of images folder
+app.use(morgan('dev'));
+
 app.use(favicon(path.join(__dirname, 'node_modules', 'govuk_template_mustache', 'assets', 'images','favicon.ico')));
+
+if (dev) {
+  var webpack = require('webpack');
+  var webpackDevMiddleware = require('webpack-dev-middleware');
+  var webpackConfig = require('./webpack.config');
+
+  var compiler = webpack(webpackConfig);
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: webpackConfig.output.publicPath
+  }));
+  console.log('Webpack compilation enabled');
+}
+
+// Middleware to serve static assets
+[
+  '/public',
+  '/app/assets',
+  '/node_modules/govuk_template_mustache/assets',
+  '/node_modules/govuk_frontend_toolkit'
+].forEach((folder) => {
+  app.use('/public', express.static(path.join(__dirname, folder)));
+});
 
 // send assetPath to all views
 app.use(function (req, res, next) {
-  res.locals.asset_path="/public/";
+  res.locals.asset_path = "/public/";
   next();
 });
 
-app.use("/", dis_routes);
 app.use("/", routes);
 
 // start the app
-app.listen(port);
+app.listen(port, () => {
+  console.log('Listening on port ' + port);
+});
 
-console.log('');
-console.log('Listening on port ' + port);
-console.log('');

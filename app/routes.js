@@ -6,67 +6,13 @@ var projects = require('./data/projects');
 
 var router = express.Router();
 
-/*
-  A way to force the ordering of the themes.
-*/
-var theme_order = [
-  'Legacy Replatforming'
-];
-
-var priority_order = [
-  'Top',
-  'High',
-  'Medium',
-  'Low'
-];
-
-var priority_descriptions = {
-  "Top":"",
-  "High":"",
-  "Medium":"",
-  "Low":""
-};
-
-/*
-  A way to force the ordering of the phases.
-*/
-var phase_order = ['backlog','discovery','alpha','beta','public beta','live'];
-
-/*
-  A function to gather the data by
-  'phase' and then 'facing' so the
-  index.html can spit them out.
-*/
-function indexify(data)
-{
-  var new_data = {};
-  _.each(data, function(value, key, list)
-  {
-    var item = _.groupBy(value,'phase');
-    new_data[key] = {};
-    _.each(item, function(v,k,l)
-    {
-      var piece = _.groupBy(v,'facing');
-      new_data[key][k] = piece;
-    });
-  });
-  return new_data;
-}
-
-/*
-  - - - - - - - - - -  INDEX PAGE - - - - - - - - - -
-*/
-router.get('/', function (req, res)
-{
-  var data = _.groupBy(projects, 'theme');
-  var new_data = indexify(data);
-  var phases = _.countBy(projects, 'phase');
+router.get('/', function (req, res) {
   res.render('index', {
-    "data":new_data,
-    "counts":phases,
-    "view":"theme",
-    "theme_order":theme_order,
-    "phase_order":phase_order
+    data: projects.byThemePhaseFacing,
+    counts: projects.counts,
+    view: 'theme',
+    themes: projects.themes,
+    phases: projects.phases
     }
   );
 });
@@ -75,161 +21,126 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
-/*
-  - - - - - - - - - -  LOCATION INDEX PAGE - - - - - - - - - -
-*/
-router.get('/location/', function (req, res)
-{
-  var data = _.groupBy(projects, 'location');
-  var new_data = indexify(data);
-
-  var loc_order = [];
-  _.each(data, function(value, key, list)
-  {
-    loc_order.push(key);
-  });
-  loc_order.sort();
-
-  var phases = _.countBy(projects, 'phase');
+router.get('/location/', function (req, res) {
   res.render('index', {
-    "data":new_data,
-    "counts":phases,
+    "data": projects.byLocationPhaseFacing,
+    "counts": projects.counts,
     "view":"location",
-    "theme_order":loc_order,
-    "phase_order":phase_order
+    "themes": projects.locations,
+    "phases":projects.phases
   });
 });
 
-
-/*
-  - - - - - - - - - -  INDEX PAGE - - - - - - - - - -
-*/
-router.get('/priority/', function (req, res)
-{
-  var data = _.groupBy(projects, 'priority');
-  var new_data = indexify(data);
-
-  var phases = _.countBy(projects, 'phase');
-
-  res.render('index', {
-    "data":new_data,
-    "counts":phases,
-    "view":"priority",
-    "theme_order":priority_order,
-    "phase_order":phase_order,
-    "priority_descriptions":priority_descriptions
-    }
-  );
-});
-
-/*
-  - - - - - - - - - -  PROJECT PAGE - - - - - - - - - -
-*/
-router.get('/projects/:id', function (req, res)
-{
-  var data = _.find(projects, {id: req.params.id});
+router.get('/projects/:id', function (req, res) {
   res.render('project', {
-    "data":data,
-    "phase_order":phase_order,
+    data: projects.getById(req.params.id),
+    phases: projects.phases,
   });
 });
 
-/*
-  - - - - - - - - - -  PROTOTYPE REDRIECT - - - - - - - - - -
-*/
-router.get('/projects/:id/prototype', function (req, res)
-{
-  var data = _.find(projects, {id:req.params.id});
-  if (typeof data.prototype == 'undefined')
-  {
-    res.render('no-prototype',{
-      "data":data,
+// TODO: make this work
+router.get('/projects/:id/prototype', function (req, res) {
+  var project = projects.getById(req.params.id);
+  if (!data.prototype) {
+    res.render('no-prototype', {
+      data: project,
     });
   } else {
     res.redirect(data.prototype);
   }
 });
 
-/*
-  - - - - - - - - - -  ALL THE DATA AS JSON - - - - - - - - - -
-*/
-
 router.get('/api', function (req, res) {
   res.json(projects);
 });
 
 router.get('/api/:id', function (req, res) {
-  var data = _.find(projects, {id: req.params.id});
+  var data = projects.getById(req.params.id);
   if (data) {
     res.json(data);
   } else {
+    res.status(404);
     res.json({error: 'ID not found'});
   }
 });
 
-router.get('/showntells/all/:loc?', function (req, res, next)
-{
-  var loc = req.params.loc;
+// TODO: make this work
+// router.get('/showntells/all/:loc?', function (req, res, next) {
+//   var loc = req.params.loc;
 
-  var data = [];
-  _.each(projects, function(el)
-  {
-    if (el.showntells)
-    _.each(el.showntells, function(sup)
-    {
-      if (loc && loc !== el.location) {}
-      else {
-        data.push({
-          "name":el.name,
-          "date":moment(sup, "D MMMM YYYY, HH:mm"),
-          "id":el.id,
-          "location":el.location,
-        })
-      }
-    })
-  })
+//   var data = [];
+//   _.each(projects, function(el)
+//   {
+//     if (el.showntells)
+//     _.each(el.showntells, function(sup)
+//     {
+//       if (loc && loc !== el.location) {}
+//       else {
+//         data.push({
+//           "name":el.name,
+//           "date":moment(sup, "D MMMM YYYY, HH:mm"),
+//           "id":el.id,
+//           "location":el.location,
+//         })
+//       }
+//     })
+//   })
 
-  req.data = req.data || {};
-  req.data.all = true;
-  req.data.loc = loc;
-  req.data.places = _.unique(_.pluck(projects,'location'));
-  req.data.showntells = _.sortBy(data, "date");
+//   req.data = req.data || {};
+//   req.data.all = true;
+//   req.data.loc = loc;
+//   req.data.places = _.unique(_.pluck(projects,'location'));
+//   req.data.showntells = _.sortBy(data, "date");
 
-  req.url = '/showntells';
-  next();
+//   req.url = '/showntells';
+//   next();
+// });
+
+// router.get('/showntells/today/:loc?', function (req, res, next) {
+//   var loc = req.params.loc;
+//   var data = [];
+//   _.each(projects, function(el)
+//   {
+//     if (el.showntells)
+//     _.each(el.showntells, function(sup)
+//     {
+//         supdate = moment(sup, "D MMMM YYYY, HH:mm");
+//         if (supdate.isSame(moment(), 'day'))
+//         {
+//           if (loc && loc !== el.location) {}
+//           else {
+//             data.push({
+//               "name":el.name,
+//               "date":supdate,
+//               "id":el.id,
+//               "location":el.location,
+//             })
+//           }
+//         }
+//     })
+//   })
+//   req.data = req.data || {};
+//   req.data.today = true;
+//   req.data.loc = loc;
+//   req.data.places = _.unique(_.pluck(projects,'location'));
+//   req.data.showntells = _.sortBy(data, "date");
+//   req.url = '/showntells';
+//   next();
+// })
+
+router.get('/display/:number?', function(req, res, next) {
+  // Grab number from URL. 0 is default.
+  var number = req.params.number;
+  if (!number) number = 0;
+  // if number is too big for the current data reset it.
+  if (number >= projects.raw.length) number = 0;
+
+  // make sure we use the right template to render.
+  res.render('display/index', {
+    data: projects.raw[number],
+    total: projects.raw.length,
+    number: number
+  });
 });
-
-router.get('/showntells/today/:loc?', function (req, res, next)
-{
-  var loc = req.params.loc;
-  var data = [];
-  _.each(projects, function(el)
-  {
-    if (el.showntells)
-    _.each(el.showntells, function(sup)
-    {
-        supdate = moment(sup, "D MMMM YYYY, HH:mm");
-        if (supdate.isSame(moment(), 'day'))
-        {
-          if (loc && loc !== el.location) {}
-          else {
-            data.push({
-              "name":el.name,
-              "date":supdate,
-              "id":el.id,
-              "location":el.location,
-            })
-          }
-        }
-    })
-  })
-  req.data = req.data || {};
-  req.data.today = true;
-  req.data.loc = loc;
-  req.data.places = _.unique(_.pluck(projects,'location'));
-  req.data.showntells = _.sortBy(data, "date");
-  req.url = '/showntells';
-  next();
-})
 
 module.exports = router;

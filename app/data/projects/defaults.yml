@@ -1,0 +1,19 @@
+---
+id: url-slug
+name: "Name Of Project"
+description: "Description of project"
+location: Sheffield
+theme: Platforms
+facing: user
+phase: backlog
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""

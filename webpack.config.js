@@ -4,13 +4,14 @@ module.exports = {
   context: __dirname,
 
   entry: {
-    main: './app/assets/sass/application.scss'
+    app: './app/assets/sass/application.scss',
+    display: './app/assets/sass/display.scss'
   },
 
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
 
   module: {
