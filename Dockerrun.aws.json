@@ -1,0 +1,10 @@
+{
+    "AWSEBDockerrunVersion": 1,
+    "Image": {
+        "Name": "mojdigitalstudio/hmpps-portfolio",
+        "Update": true
+    },
+    "Ports": [
+        {"ContainerPort": "3100"}
+    ]
+}

@@ -8,7 +8,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build": "webpack"
+    "build": "webpack",
+    "docker:build": "docker build -t mojdigitalstudio/hmpps-portfolio .",
+    "docker:push": "docker push mojdigitalstudio/hmpps-portfolio"
   },
   "dependencies": {
     "css-loader": "^0.28.1",
