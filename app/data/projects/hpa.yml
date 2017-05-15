@@ -4,6 +4,7 @@ name: "Historic Prisoner Application"
 description: >
   Provides simple, clear and fast access to historic details of prisoners from before 2012.
 service_man: John Fitzpatrick
+sro: Bryan Clarke
 location: Sheffield
 theme: Legacy Replatforming
 facing: internal

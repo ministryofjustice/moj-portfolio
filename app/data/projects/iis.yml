@@ -4,6 +4,7 @@ name: "Inmate Information System"
 description: >
   Replacing our old prison archive mainframe with something cheaper and usable
 service_man: John Fitzpatrick
+sro: Carol Teece
 location: Sheffield
 theme: Legacy Replatforming
 facing: internal

@@ -4,6 +4,7 @@ name: "NOMIS"
 description: >
   Managing prisoners and resources.
 service_man: Julian Dos Remedios
+sro: Carol Teece
 location: Sheffield
 theme: Legacy Replatforming
 facing: internal
