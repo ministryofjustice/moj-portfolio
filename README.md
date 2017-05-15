@@ -15,8 +15,15 @@ Install
 yarn install
 ```
 
-## Running in dev mode
+## Build the app
 
+You'll need to run this command to build any changes to the codebase.
+
+```
+yarn build
+```
+
+## Running in dev mode
 ```
 yarn start
 ```
