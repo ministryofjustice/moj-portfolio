@@ -5,6 +5,7 @@ description: >
   Uses analytics to help Prison Officers decide whether to place prisoners in single or shared cells.
 service_man: John Fitzpatrick
 sro: Bryan Clarke
+product_man: Nick Townend
 location: Sheffield
 theme: Legacy Replatforming
 facing: internal
