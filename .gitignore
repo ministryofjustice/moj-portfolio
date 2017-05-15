@@ -6,3 +6,5 @@ node_modules
 *.sublime-*
 docs
 npm-debug.log
+idea
+idea/**
