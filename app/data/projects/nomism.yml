@@ -1,0 +1,21 @@
+---
+id: nomism
+name: "NOMIS on the Move"
+description: >
+  Providing Key Workers mobile access to information.
+service_man: Julian Dos Remedios
+location: Sheffield
+theme: Legacy Replatforming
+facing: internal
+phase: alpha
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""

@@ -1,0 +1,21 @@
+---
+id: omr
+name: "Offender Management Review"
+description: >
+  Implementing operational reform across prison and probation service.
+service_man: John Fitzpatrick
+location: Sheffield
+theme: Legacy Replatforming
+facing: internal
+phase: backlog
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""

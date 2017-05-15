@@ -1,0 +1,21 @@
+---
+id: csra
+name: "Cell Sharing Risk Assessment"
+description: >
+  Uses analytics to help Prison Officers decide whether to place prisoners in single or shared cells.
+service_man: John Fitzpatrick
+location: Sheffield
+theme: Legacy Replatforming
+facing: internal
+phase: alpha
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""

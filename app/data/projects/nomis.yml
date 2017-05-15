@@ -1,0 +1,21 @@
+---
+id: nomism
+name: "NOMIS"
+description: >
+  Managing prisoners and resources.
+service_man: Julian Dos Remedios
+location: Sheffield
+theme: Legacy Replatforming
+facing: internal
+phase: live
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
