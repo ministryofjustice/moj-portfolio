@@ -5,10 +5,7 @@
 <main id="content" role="main">
 
 	<p style="margin-top:30px;">
-		These are all the things we're doing
-		{% if view != 'theme' %}(<a href="/">order by theme</a>){% endif %}
-		{% if view != 'location' %}(<a href="/location/">order by location</a>){% endif %}
-	</p>
+		These are all the things we're doing, <a href="/">order by theme</a> or <a href="/location/">order by location</a></p>
 
 	<div class="grid-row">
 		<section class="column-fifth">
@@ -41,7 +38,7 @@
 	{% for theme in themes %}
 
 		{% set themeProjects = data[theme] %}
-		<!-- <h2 class="heading-large service-area">{{ theme }}</h2> -->
+		<h2 class="heading-large service-area">{{ theme }}</h2>
 
 		<div class="grid-row">
 		{% for phase in phases %}
@@ -50,18 +47,18 @@
 			{% if themeProjects[phase] %}
 
 				<ul class="link-list border-{{phase}}">
-				{% for project in themeProjects[phase]['user'] %}
-					<li><a href="/projects/{{ project.id }}">{{ project.name }}</a></li>
+				{% for project in themeProjects[phase] %}
+					<li>
+						<a href="/projects/{{ project.id }}">
+							{{ project.name }}
+						</a>
+					</li>
 				{% endfor %}
 				</ul>
 
-				<ul class="link-list border-internal">
-				{% for project in themeProjects[phase]['internal'] %}
-					<li><a href="/projects/{{ project.id }}">{{ project.name }}</a></li>
-				{% endfor %}
-				</ul>
-
-			{% else %}{% endif %}
+			{% else %}
+				&nbsp;
+			{% endif %}
 			</section>
 
 		{% endfor %}
@@ -69,7 +66,7 @@
 
 	{% endfor %}
 
-	<p style="margin-top: 100px">Last updated 3rd May 2017. <a href="/about">About the digital portfolio</a><p>
+	<p style="margin-top: 100px">Last updated 17th May 2017. <a href="/about">About the digital portfolio</a><p>
 
 </main>
 

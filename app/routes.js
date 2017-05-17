@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.get('/', function (req, res) {
   res.render('index', {
-    data: projects.byThemePhaseFacing,
+    data: projects.byThemePhase,
     counts: projects.counts,
     view: 'theme',
     themes: projects.themes,
@@ -23,7 +23,7 @@ router.get('/about', (req, res) => {
 
 router.get('/location/', function (req, res) {
   res.render('index', {
-    "data": projects.byLocationPhaseFacing,
+    "data": projects.byLocationPhase,
     "counts": projects.counts,
     "view":"location",
     "themes": projects.locations,

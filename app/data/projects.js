@@ -5,31 +5,8 @@ var merge = require('merge');
 var glob = require('glob');
 var _ = require('lodash');
 
-/*
-  A way to force the ordering of the themes.
-*/
-var theme_order = [
-  'Legacy Replatforming'
-];
-
-var priority_order = [
-  'Top',
-  'High',
-  'Medium',
-  'Low'
-];
-
-var priority_descriptions = {
-  "Top":"",
-  "High":"",
-  "Medium":"",
-  "Low":""
-};
-
-/*
-  A way to force the ordering of the phases.
-*/
-var phase_order = ['backlog','discovery','alpha','beta','public beta','live'];
+var theme_order = ['Safety', 'Efficiency', 'Rehabilitation', 'Legacy'];
+var phase_order = ['backlog','discovery','alpha','beta','live'];
 
 function nestedGroupBy(data, keys) {
   var grouped = {};
@@ -71,9 +48,9 @@ exports.locations = _.chain(projects).map('location').uniq().value();
 
 exports.counts = _.countBy(projects, 'phase');
 
-exports.byThemePhaseFacing =
-  nestedGroupBy(projects, ['theme', 'phase', 'facing']);
-exports.byLocationPhaseFacing =
-  nestedGroupBy(projects, ['location', 'phase', 'facing']);
+exports.byThemePhase =
+  nestedGroupBy(projects, ['theme', 'phase']);
+exports.byLocationPhase =
+  nestedGroupBy(projects, ['location', 'phase']);
 
 exports.getById = (id) => _.find(projects, {id});

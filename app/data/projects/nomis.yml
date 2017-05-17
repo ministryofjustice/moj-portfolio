@@ -1,5 +1,5 @@
 ---
-id: nomism
+id: nomis
 name: "NOMIS"
 description: >
   Managing prisoners and resources.
@@ -7,7 +7,7 @@ service_man: Julian Dos Remedios
 sro: Carol Teece
 product_man: Raj Panjwani
 location: Sheffield
-theme: Legacy Replatforming
+theme: Legacy
 facing: internal
 phase: live
 phase-history:
