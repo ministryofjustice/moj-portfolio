@@ -13,6 +13,7 @@
     "docker:push": "docker push mojdigitalstudio/hmpps-portfolio"
   },
   "dependencies": {
+    "chokidar": "^1.7.0",
     "css-loader": "^0.28.1",
     "express": "^4.15.2",
     "express-nunjucks": "^2.2.3",

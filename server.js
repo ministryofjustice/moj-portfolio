@@ -4,8 +4,6 @@ var expressNunjucks = require('express-nunjucks');
 var morgan = require('morgan');
 var favicon = require('serve-favicon');
 
-var routes = require('./app/routes.js');
-
 var app = express();
 
 var port = process.env.PORT || 3100;
@@ -46,6 +44,14 @@ if (dev) {
     publicPath: webpackConfig.output.publicPath
   }));
   console.log('Webpack compilation enabled');
+
+  var chokidar = require('chokidar');
+  chokidar.watch('./app', {ignoreInitial: true}).on('all', (event, path) => {
+    console.log("Clearing /app/ module cache from server");
+    Object.keys(require.cache).forEach(function(id) {
+      if (/[\/\\]app[\/\\]/.test(id)) delete require.cache[id];
+    });
+  });
 }
 
 // Middleware to serve static assets
@@ -64,7 +70,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/", routes);
+app.use("/", function(req, res, next) {
+  require('./app/routes.js')(req, res, next);
+});
 
 // start the app
 app.listen(port, () => {
