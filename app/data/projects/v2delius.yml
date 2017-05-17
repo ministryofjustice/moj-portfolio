@@ -1,0 +1,23 @@
+---
+id: v2delius
+name: "Delius Version 2"
+description: >
+  Delius Version 2 decription goes here.
+service_man: Dawn Ramshaw
+sro: Bryan Clarke
+product_man: Nick Gallon
+location: Sheffield
+theme: Legacy Replatforming
+facing: internal
+phase: discovery
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
