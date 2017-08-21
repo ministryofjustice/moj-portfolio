@@ -8,7 +8,7 @@ product_man: Raj Kissy
 location: Sheffield
 theme: Efficiency
 facing: internal
-phase: discovery
+phase: alpha
 phase-history:
   alpha:
     - date: ""
