@@ -9,7 +9,7 @@ product_man: Nick Townend
 location: Sheffield
 theme: Safety
 facing: internal
-phase: alpha
+phase: beta
 phase-history:
   alpha:
     - date: ""

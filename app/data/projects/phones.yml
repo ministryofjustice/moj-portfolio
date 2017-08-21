@@ -1,11 +1,11 @@
 ---
-id: url-slug
-name: "Name Of Project"
-description: "Description of project"
+id: phones
+name: "Telephone Numbers to Prisoners"
+description:
 location: Sheffield
-theme: Efficiency
-facing: user
-phase: backlog
+theme: Rehabilitation
+facing: internal
+phase: discovery
 phase-history:
   alpha:
     - date: ""

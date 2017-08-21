@@ -1,10 +1,10 @@
 ---
-id: url-slug
-name: "Name Of Project"
-description: "Description of project"
+id: employee-engagement
+name: "Employee Engagement"
+description:
 location: Sheffield
 theme: Efficiency
-facing: user
+facing: internal
 phase: backlog
 phase-history:
   alpha:

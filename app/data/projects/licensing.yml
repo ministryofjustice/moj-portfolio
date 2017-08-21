@@ -1,0 +1,22 @@
+---
+id: licensing
+name: "Create and Vary a License"
+description: >
+  Try and join up some disparate systems to make it simpler and safer to release people on license.
+service_man: Julian Dos Remedios
+product_man: Raj Kissy
+location: Sheffield
+theme: Efficiency
+facing: internal
+phase: discovery
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
