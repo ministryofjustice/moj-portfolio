@@ -5,7 +5,7 @@ description:
 location: Sheffield
 theme: Rehabilitation
 facing: internal
-phase: discovery
+phase: backlog
 phase-history:
   alpha:
     - date: ""
