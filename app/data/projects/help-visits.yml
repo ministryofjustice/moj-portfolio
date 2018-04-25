@@ -1,15 +1,14 @@
 ---
-id: breach
-name: "Breach and recall"
+id: help-visits
+name: "Help with prison visits"
 description: >
-  description copy needed.
+  Helping people on low incomes pay for travel to visit friends and relatives in prison.
 service_man: John Fitzpatrick
-sro: Bryan Clarke
-product_man: Nick Gallon
+product_man: Jennifer Myerscough
 location: Sheffield
 theme: Rehabilitation
 facing: internal
-phase: backlog
+phase: beta
 phase-history:
   alpha:
     - date: ""

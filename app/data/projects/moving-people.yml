@@ -1,15 +1,14 @@
 ---
-id: nomism
-name: "NOMIS on the Move"
+id: moving-people
+name: "Moving People Safely"
 description: >
-  Providing Key Workers mobile access to information.
+  Transferring prisoners across the estate.
 service_man: Julian Dos Remedios
-sro: Carol Teece
-product_man: Gary Sherrington
-location: Sheffield
-theme: Efficiency
+product_man: Tammy Wallace
+location: London
+theme: Safety
 facing: internal
-phase: alpha
+phase: beta
 phase-history:
   alpha:
     - date: ""

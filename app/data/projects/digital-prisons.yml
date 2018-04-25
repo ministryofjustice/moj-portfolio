@@ -1,15 +1,14 @@
 ---
-id: dot
-name: "Delius old tech"
+id: digital-prisons
+name: "Digital Prisons"
 description: >
-  description copy needed.
+  Self Service in Wayland and Berwyn Prisons.
 service_man: John Fitzpatrick
-sro: Bryan Clarke
-product_man: Nick Gallon
+product_man: Gemma Barnes (interim)
 location: Sheffield
 theme: Rehabilitation
 facing: internal
-phase: discovery
+phase: beta
 phase-history:
   alpha:
     - date: ""

@@ -1,15 +1,14 @@
 ---
-id: dnt
-name: "Case Allocation"
+id: short-format
+name: "Short format report"
 description: >
-  description copy needed.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
+  New short format report with autosave.
+service_man: Dawn Ramshaw
 product_man: Nick Gallon
 location: Sheffield
 theme: Rehabilitation
 facing: internal
-phase: discovery
+phase: alpha
 phase-history:
   alpha:
     - date: ""

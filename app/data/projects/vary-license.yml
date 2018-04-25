@@ -1,11 +1,10 @@
 ---
-id: licensing
-name: "Create and Vary a License"
+id: vary-license
+name: "Create and vary a license"
 description: >
-  Try and join up some disparate systems to make it simpler and safer to release people on license.
+  Try and join up some disparate systems to make it simpler and safer to release people on license..
 service_man: Julian Dos Remedios
 product_man: Raj Kissy
-sro: Julie Brett
 location: Sheffield
 theme: Efficiency
 facing: internal

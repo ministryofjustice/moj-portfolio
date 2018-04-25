@@ -1,15 +1,14 @@
 ---
-id: hpa
-name: "Historic Prisoner Application"
+id: o-book
+name: "Observation book"
 description: >
-  Provides simple, clear and fast access to historic details of prisoners from before 2012.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
-product_man: Diane Cattley
+  description.
+service_man: Julian dos Remedios
+product_man: John Saunders
 location: Sheffield
 theme: Efficiency
 facing: internal
-phase: live
+phase: backlog
 phase-history:
   alpha:
     - date: ""

@@ -1,15 +1,14 @@
 ---
-id: kw
-name: "Key worker"
+id: nomis-move
+name: "NOMIS on the move"
 description: >
-  description copy needed.
-service_man: Julian dos Remedios
-sro: Bryan Clarke
-product_man: John Saunders
+  Providing Key Workers mobile access to information..
+service_man: Julian Dos Remedios
+product_man: Gary Sherrington
 location: Sheffield
 theme: Efficiency
 facing: internal
-phase: backlog
+phase: alpha
 phase-history:
   alpha:
     - date: ""

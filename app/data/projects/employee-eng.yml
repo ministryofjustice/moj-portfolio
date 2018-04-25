@@ -1,13 +1,12 @@
 ---
-id: dnt
-name: "Delius new tech"
+id: employee-eng
+name: "Employee engagement"
 description: >
-  description copy needed.
+  Improve engagement with prison officers by providing better tools.
 service_man: John Fitzpatrick
-sro: Bryan Clarke
-product_man: Nick Gallon
+product_man: Lauren Darby
 location: Sheffield
-theme: Rehabilitation
+theme: Efficiency
 facing: internal
 phase: discovery
 phase-history:

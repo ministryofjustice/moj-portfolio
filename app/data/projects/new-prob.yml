@@ -1,10 +1,9 @@
 ---
-id: os
-name: "Offender Summery"
+id: new-prob
+name: "New Probation Services"
 description: >
-  description copy needed.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
+  description.
+service_man: Dawn Ramshaw
 product_man: Nick Gallon
 location: Sheffield
 theme: Rehabilitation

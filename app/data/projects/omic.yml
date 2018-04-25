@@ -1,10 +1,9 @@
 ---
-id: dnt
+id: omic
 name: "OMIC Parole"
 description: >
-  description copy needed.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
+  New cloud based parole service for OMIC model.
+service_man: Dawn Ramshaw
 product_man: Nick Gallon
 location: Sheffield
 theme: Rehabilitation

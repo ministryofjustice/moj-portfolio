@@ -1,15 +1,14 @@
 ---
-id: ob
-name: "Observation book"
+id: telephone
+name: "Telephone numbers to prisoners"
 description: >
-  description copy needed.
-service_man: Julian dos Remedios
-sro: Bryan Clarke
-product_man: John Saunders
+  Collect telephone numbers for prisoners during reception.
+service_man: None
+product_man: None
 location: Sheffield
-theme: Efficiency
+theme: Rehabilitation
 facing: internal
-phase: alpha
+phase: backlog
 phase-history:
   alpha:
     - date: ""

@@ -1,10 +1,9 @@
 ---
-id: classic-p
-name: "Classic Parole"
+id: dashboard
+name: "Officer Dashboard"
 description: >
-  description copy needed.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
+  description.
+service_man: Dawn Ramshaw
 product_man: Nick Gallon
 location: Sheffield
 theme: Rehabilitation

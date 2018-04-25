@@ -1,15 +1,14 @@
 ---
-id: oman
-name: "Offender management"
+id: off-sum
+name: "Offender summary"
 description: >
-  description copy needed.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
+  Refined Offender Summary with contextual Info.
+service_man: Dawn Ramshaw
 product_man: Nick Gallon
 location: Sheffield
 theme: Rehabilitation
 facing: internal
-phase: backlog
+phase: discovery
 phase-history:
   alpha:
     - date: ""

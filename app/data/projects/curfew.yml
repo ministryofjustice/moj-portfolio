@@ -1,15 +1,14 @@
 ---
-id: v2delius
-name: "Delius Version 2"
+id: curfew
+name: "Home detention curfew"
 description: >
-  Delius Version 2 decription goes here.
+  description.
 service_man: Dawn Ramshaw
-sro: Bryan Clarke
-product_man: Nick Gallon
+product_man: Jim Musgrave
 location: Sheffield
-theme: Efficiency
+theme: Rehabilitation
 facing: internal
-phase: discovery
+phase: alpha
 phase-history:
   alpha:
     - date: ""

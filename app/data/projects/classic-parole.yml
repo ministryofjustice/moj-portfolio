@@ -1,15 +1,14 @@
 ---
-id: ssf
-name: "Short story format"
+id: classic-parole
+name: "Classic Parole"
 description: >
-  description copy needed.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
+  New cloud based parole service for existing model.
+service_man: Dawn Ramshaw
 product_man: Nick Gallon
 location: Sheffield
 theme: Rehabilitation
 facing: internal
-phase: alpha
+phase: backlog
 phase-history:
   alpha:
     - date: ""

@@ -1,13 +1,12 @@
 ---
-id: hdc
-name: "Home detention curfew"
+id: key-worker
+name: "Key worker"
 description: >
-  description copy needed.
-service_man: John Fitzpatrick
-sro: Bryan Clarke
-product_man: Nick Gallon
+  description.
+service_man: Julian dos Remedios
+product_man: John Saunders
 location: Sheffield
-theme: Rehabilitation
+theme: Efficiency
 facing: internal
 phase: alpha
 phase-history:
