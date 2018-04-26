@@ -20,3 +20,6 @@ phase-history:
       label: ""
     - date: ""
       label: ""
+product_man_slack:
+service_man_slack:
+team_slack:

@@ -56,10 +56,32 @@
 			<p>{{ data.sro | default('Not set') }}</p> -->
 
 			<h3 class="heading-small">Service Owner</h3>
-			<p>{{ data.service_man | default('Not set') }}</p>
+
+			{% if data.service_man_slack %}
+				<a href="{{ data.service_man_slack }}" target="_blank" title="{{ data.service_man | default('Not set') }}">
+					<p>{{ data.service_man | default('Not set') }}</p>
+				</a>
+			{% else %}
+				<p>{{ data.service_man | default('Not set') }}</p>
+			{% endif %}
 
 			<h3 class="heading-small">Product Owner</h3>
-			<p>{{ data.product_man | default('Not set') }}</p>
+
+			{% if data.product_man_slack %}
+				<a href="{{ data.product_man_slack }}" target="_blank" title="{{ data.product_man | default('Not set') }}">
+					<p>{{ data.product_man | default('Not set') }}</p>
+				</a>
+			{% else %}
+				<p>{{ data.product_man | default('Not set') }}</p>
+			{% endif %}
+
+			<h3 class="heading-small">Slack</h3>
+
+			{% if data.team_slack %}
+				<a href="{{ data.team_slack }}" target="_blank" title="Team Slack channel">
+					<p>Team Slack channel</p>
+				</a>
+			{% endif %}
 
 			<hr />
 
