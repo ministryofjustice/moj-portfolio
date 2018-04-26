@@ -2,7 +2,7 @@
 id: curfew
 name: "Home detention curfew"
 description: >
-  description.
+  HDC Digital Service providing core Home Detention Curfew (HDC) journey from Prison to HDC licence creation and release on curfew.
 service_man: Dawn Ramshaw
 product_man: Jim Musgrave
 location: Sheffield
