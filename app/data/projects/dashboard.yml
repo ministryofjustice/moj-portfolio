@@ -2,7 +2,7 @@
 id: dashboard
 name: "Officer Dashboard"
 description: >
-  description.
+  My cases, alerts and appointments in one place.
 service_man: Dawn Ramshaw
 product_man: Nick Gallon
 location: Sheffield
