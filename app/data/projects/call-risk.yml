@@ -8,7 +8,7 @@ product_man: John Saunders
 location: Sheffield
 theme: Safety
 facing: internal
-phase: beta
+phase: backlog
 phase-history:
   alpha:
     - date: ""
