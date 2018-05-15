@@ -1,0 +1,26 @@
+---
+id: family-justice
+name: "Family Justice (C100)"
+description: >
+  Digitisation of the C100 form (a court order to make arrangements for a child or resolve a dispute about their upbringing)..
+service_man: Jack Collier
+product_man: Alejandra Diaz
+location: London
+theme: UCPD
+facing: internal
+phase: Delivery
+main_benefit: User Satisfaction
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+product_man_slack: product_man_slack
+service_man_slack: service_man_slack
+team_slack: team_slackd

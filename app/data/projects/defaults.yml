@@ -6,6 +6,7 @@ location: Sheffield
 theme: Efficiency
 facing: user
 phase: backlog
+main_benefit: benefit
 phase-history:
   alpha:
     - date: ""

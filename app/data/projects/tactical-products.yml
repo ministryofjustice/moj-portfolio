@@ -1,0 +1,26 @@
+---
+id: tactical-products
+name: "Tactical Products"
+description: >
+  Building, maintaining and improving products for the tactical needs of MoJ users and business areas to help the citizen access justice..
+service_man: TBD
+product_man: Andy Robb
+location: London
+theme: Run & Maintain
+facing: internal
+phase: Delivery
+main_benefit: Cash
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+product_man_slack: product_man_slack
+service_man_slack: service_man_slack
+team_slack: team_slackd

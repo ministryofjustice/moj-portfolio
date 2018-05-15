@@ -1,0 +1,26 @@
+---
+id: probation
+name: "Probation, inc TTG & RAR"
+description: >
+  A discovery into re-settlement and release activities..
+service_man: Jack Collier
+product_man: Charlotte Collingwood
+location: London
+theme: UCPD
+facing: internal
+phase: Discovery
+main_benefit: Future Pipeline
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+product_man_slack: product_man_slack
+service_man_slack: service_man_slack
+team_slack: team_slackd

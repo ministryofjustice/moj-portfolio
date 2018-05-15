@@ -1,0 +1,26 @@
+---
+id: form-builder
+name: "Form Builder"
+description: >
+  Tooling activity to standardise, harmonise and rationalise the devlopment cycle of for creation..
+service_man: Michael Clarke
+product_man: Jags Parbha
+location: London
+theme: Cross Justice
+facing: internal
+phase: Delivery
+main_benefit: Cash
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+product_man_slack: product_man_slack
+service_man_slack: service_man_slack
+team_slack: team_slackd

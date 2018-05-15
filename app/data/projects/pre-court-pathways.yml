@@ -1,0 +1,26 @@
+---
+id: pre-court-pathways
+name: "Pre-Court Pathways"
+description: >
+  TBD.
+service_man: Sam Read
+product_man: TBD
+location: London
+theme: Cross Justice
+facing: internal
+phase: Pre-discovery
+main_benefit: User Satisfaction
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+product_man_slack: product_man_slack
+service_man_slack: service_man_slack
+team_slack: team_slackd

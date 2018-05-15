@@ -1,0 +1,26 @@
+---
+id: doomsday-book
+name: "Doomsday Book"
+description: >
+  An audit of the MoJ’s citizen facing services..
+service_man: Jack Collier
+product_man: Jags Parbha
+location: London
+theme: HQ
+facing: internal
+phase: Consultancy
+main_benefit: User Satisfaction
+phase-history:
+  alpha:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+  discovery:
+    - date: ""
+      label: ""
+    - date: ""
+      label: ""
+product_man_slack: product_man_slack
+service_man_slack: service_man_slack
+team_slack: team_slackd
