@@ -164,6 +164,16 @@
   }
 }
 
+.column-fourth {
+  box-sizing:border-box;
+  padding:0 15px;
+  @media (min-width: 640px) {
+    float:left;
+    width:25%;
+    min-height: 1px;
+  }
+}
+
 .videoWrapper {
 	position: relative;
 	padding-bottom: 51%;

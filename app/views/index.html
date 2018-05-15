@@ -8,26 +8,26 @@
 		These are all the things we're doing, <a href="/">order by theme</a> or <a href="/location/">order by location</a></p>
 
 	<div class="grid-row">
-		<section class="column-fifth">
+		<section class="column-fourth">
 			<div class="tag backlog">Pre-discovery</div>
 			<div class="big_number txt-backlog">{{ counts.Prediscovery }}</div>
 		</section>
-		<section class="column-fifth">
+		<section class="column-fourth">
 			<div class="tag discovery">Discovery</div>
 			<div class="big_number txt-discovery">{{ counts.Discovery }}</div>
 		</section>
-		<section class="column-fifth">
+		<section class="column-fourth">
 			<div class="tag alpha">Consultancy</div>
 			<div class="big_number txt-alpha">{{ counts.Consultancy }}</div>
 		</section>
-		<section class="column-fifth">
+		<section class="column-fourth">
 			<div class="tag beta">Delivery</div>
 			<div class="big_number txt-beta">{{ counts.Delivery }}</div>
 		</section>
-		<section class="column-fifth">
-			<!-- <div class="tag live">Live</div>
-			<div class="big_number txt-live">{{ counts.live }}</div> -->
-		</section>
+		<!-- <section class="column-fifth">
+			<div class="tag live">Live</div>
+			<div class="big_number txt-live">{{ counts.live }}</div>
+		</section> -->
 	</div>
 
 	{#
@@ -43,7 +43,7 @@
 		<div class="grid-row">
 		{% for phase in phases %}
 
-			<section class="column-fifth">
+			<section class="column-fourth">
 			{% if themeProjects[phase] %}
 
 				<ul class="link-list border-{{phase}}">
