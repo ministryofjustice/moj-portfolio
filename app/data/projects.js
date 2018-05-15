@@ -5,8 +5,8 @@ var merge = require('merge');
 var glob = require('glob');
 var _ = require('lodash');
 
-var theme_order = ['Safety', 'Efficiency', 'Rehabilitation', 'Legacy'];
-var phase_order = ['backlog','discovery','alpha','beta','live'];
+var theme_order = ['HQ', 'UCPD', 'Cross Justice', 'HMCTS and pre-court', 'Run & Maintain'];
+var phase_order = ['Prediscovery','Discovery','Consultancy','Delivery'];
 
 function nestedGroupBy(data, keys) {
   var grouped = {};
