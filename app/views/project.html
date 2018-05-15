@@ -75,17 +75,15 @@
 				<p>{{ data.product_man | default('Not set') }}</p>
 			{% endif %}
 
-			<h3 class="heading-small">Slack</h3>
+			<h3 class="heading-small">Benefit</h3>
 
-			{% if data.team_slack %}
-				<a href="{{ data.team_slack }}" target="_blank" title="Team Slack channel">
-					<p>Team Slack channel</p>
-				</a>
+			{% if data.main_benefit %}
+				<p>{{ data.main_benefit }}</p>
 			{% endif %}
 
 			<hr />
 
-			<h3 class="heading-small">Upcoming show &lsquo;n&rsquo; tells</h3>
+			<!-- <h3 class="heading-small">Upcoming show &lsquo;n&rsquo; tells</h3>
 			<ul>
 				{% for item in data.showntells %}
 				  <li style="margin-bottom:10px">
@@ -94,7 +92,7 @@
 					</li>
 				{% endfor %}
 				<li></li>
-			</ul>
+			</ul> -->
 
 			<!--<h3 class="heading-small">Prototype Link</h3>
 			<p><a href="{{ data.prototype | default('#') }}">{{ data.prototype | default('http://not.set/') }}</a></p>-->
