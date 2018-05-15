@@ -1,2 +1,2 @@
 [config]
-command = bash kudu-deploy.sh
+command = bash deploy.cmd

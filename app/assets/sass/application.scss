@@ -42,9 +42,12 @@
   text-transform:uppercase;
 }
 .tag.backlog   {background-color:$backlog-colour}
+.tag.prediscovery   {background-color:$backlog-colour}
 .tag.discovery {background-color:$discovery-colour;}
 .tag.alpha     {background-color:$alpha-colour;}
+.tag.consultancy     {background-color:$alpha-colour;}
 .tag.beta      {background-color:$beta-colour;}
+.tag.delivery      {background-color:$beta-colour;}
 .tag.live      {background-color:$live-colour;}
 
 .big_number {
@@ -56,9 +59,12 @@
   Convienience classes for colouring text.
 */
 .txt-backlog    {color:$backlog-colour}
+.txt-prediscovery   {background-color:$backlog-colour}
 .txt-discovery  {color:$discovery-colour}
 .txt-alpha      {color:$alpha-colour}
+.txt-consultancy      {color:$alpha-colour}
 .txt-beta       {color:$beta-colour}
+.txt-delivery       {color:$beta-colour}
 .txt-public     {color:$beta-colour}
 .txt-live       {color:$live-colour}
 /*
@@ -117,9 +123,12 @@
 .border-internal  {border-color:$black;}
 
 .circle.backlog   {background-color:$backlog-colour;}
+.circle.prediscovery   {background-color:$backlog-colour;}
 .circle.discovery {background-color:$discovery-colour;}
 .circle.alpha     {background-color:$alpha-colour;}
+.circle.consultancy     {background-color:$alpha-colour;}
 .circle.beta      {background-color:$beta-colour;}
+.circle.delivery      {background-color:$beta-colour;}
 .circle.live      {background-color:$live-colour;}
 
 .phase_modifier {
@@ -142,7 +151,7 @@
   text-align:center;
   color:white;
   font-weight:700;
-  font-size:24px;
+  font-size:14px;
 }
 .circle {
   background:red;

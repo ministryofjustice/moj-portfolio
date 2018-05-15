@@ -9,8 +9,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack",
-    "docker:build": "docker build -t mojdigitalstudio/hmpps-portfolio .",
-    "docker:push": "docker push mojdigitalstudio/hmpps-portfolio"
+    "docker:build": "docker build -t mojdigitalstudio/moj-portfolio .",
+    "docker:push": "docker push mojdigitalstudio/moj-portfolio"
   },
   "dependencies": {
     "chokidar": "^1.7.0",
