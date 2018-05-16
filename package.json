@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build": "webpack",
+    "postinstall": "webpack",
     "docker:build": "docker build -t mojdigitalstudio/moj-portfolio .",
     "docker:push": "docker push mojdigitalstudio/moj-portfolio"
   },
