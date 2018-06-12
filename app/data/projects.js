@@ -6,7 +6,7 @@ var glob = require('glob');
 var _ = require('lodash');
 
 var theme_order = ['Digital HQ', 'UCPD', 'Cross Justice', 'Tactical Products', 'Plus'];
-var phase_order = ['Discovery','Consultancy','Delivery','Ideas Backlog','TBC'];
+var phase_order = ['Discovery','Consultancy','Delivery','IdeasBacklog','TBC'];
 
 function nestedGroupBy(data, keys) {
   var grouped = {};
