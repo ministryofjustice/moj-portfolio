@@ -1,26 +1,12 @@
----
 id: form-finder
-name: "Form Finder"
-description: >
-  Lift and shift workpackge of various forms, as well as content, navigation, storage and retention improvements..
-service_man: Michael Clarke
-product_man: Stephen Dunne
+name: Form Finder
+description: >-
+  Lift and shift workpackge of various forms, as well as content, navigation,
+  storage and retention improvements
+theme: Cross Justice
+phase: Ideas Backlog
+main_benefit: TBC
+product_man: TBC
+service_man: TBC
+team_slack: Insert Trello Board reference
 location: London
-theme: HMCTS and pre-court
-facing: internal
-phase: Delivery
-main_benefit: User Satisfaction
-phase-history:
-  alpha:
-    - date: ""
-      label: ""
-    - date: ""
-      label: ""
-  discovery:
-    - date: ""
-      label: ""
-    - date: ""
-      label: ""
-product_man_slack: product_man_slack
-service_man_slack: service_man_slack
-team_slack: team_slackd

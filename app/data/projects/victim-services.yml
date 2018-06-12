@@ -1,26 +1,10 @@
----
 id: victim-services
-name: "Victim Services"
-description: >
-  A UCPD discovery and micro-services workstream..
-service_man: Jack Collier
-product_man: Adam Shabbir
-location: London
+name: Victim Services
+description: A UCPD discovery and micro-services workstream
 theme: UCPD
-facing: internal
 phase: Discovery
 main_benefit: Future Pipeline
-phase-history:
-  alpha:
-    - date: ""
-      label: ""
-    - date: ""
-      label: ""
-  discovery:
-    - date: ""
-      label: ""
-    - date: ""
-      label: ""
-product_man_slack: product_man_slack
-service_man_slack: service_man_slack
-team_slack: team_slackd
+product_man: Adam Shabbir
+service_man: Jack Collier
+team_slack: Insert Trello Board reference
+location: London

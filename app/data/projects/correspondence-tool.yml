@@ -1,26 +1,10 @@
----
 id: correspondence-tool
-name: "Correspondence Tool"
-description: >
-  Platform replacement and capability improvements..
-service_man: Keira Poland
-product_man: Polly Holbrook
-location: London
-theme: HQ
-facing: internal
+name: Correspondence Tool
+description: Platform replacement and capability improvements
+theme: Digital HQ
 phase: Delivery
 main_benefit: Time Saving
-phase-history:
-  alpha:
-    - date: ""
-      label: ""
-    - date: ""
-      label: ""
-  discovery:
-    - date: ""
-      label: ""
-    - date: ""
-      label: ""
-product_man_slack: product_man_slack
-service_man_slack: service_man_slack
-team_slack: team_slackd
+product_man: Polly Holbrook
+service_man: Keira Poland
+team_slack: Insert Trello Board reference
+location: London

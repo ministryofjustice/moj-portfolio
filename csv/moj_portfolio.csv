@@ -1,0 +1,20 @@
+ID,name,description,theme,phase,main_benefit,product_man,service_man,team_slack,location
+doomsday-book,Doomsday Book,An audit of the MoJ’s citizen facing services,Digital HQ,Consultancy,User Satisfaction,Jags Parbha,Jack Collier,Insert Trello Board reference,London
+probation,Probation (inc. TTG & RAR),A discovery into re-settlement and release activities,UCPD,Discovery,Future Pipeline,Charlotte Collingwood,Jack Collier,Insert Trello Board reference,London
+youth-justice,Youth Justice,A UCPD discovery and micro-services workstream,UCPD,Discovery,Future Pipeline,Alice Carter,Jack Collier,Insert Trello Board reference,London
+victim-services,Victim Services,A UCPD discovery and micro-services workstream,UCPD,Discovery,Future Pipeline,Adam Shabbir,Jack Collier,Insert Trello Board reference,London
+family-justice,Family Justice (C100),Digitisation of the C100 form (a court order to make arrangements for a child or resolve a dispute about their upbringing),UCPD,Delivery,User Satisfaction,Alejandra Diaz,Jack Collier,Insert Trello Board reference,London
+probation-service-design,Probation Service Design,Pre-discovery,UCPD,Ideas Backlog,TBC,TBC,TBC,TBC,TBC
+ucpd,UCPD discovery/service design,Pre-discovery,UCPD,Ideas Backlog,TBC,TBC,TBC,TBC,TBC
+intranet,Intranet,Platform replacement and capability improvements,Digital HQ,Delivery,Time Saving,Keira Poland,Keira Poland,Insert Trello Board reference,London
+correspondence-tool,Correspondence Tool,Platform replacement and capability improvements,Digital HQ,Delivery,Time Saving,Polly Holbrook,Keira Poland,Insert Trello Board reference,London
+form-builder,Form Builder,"Tooling activity to standardise, harmonise and rationalise the devlopment cycle of for creation",Cross Justice,Delivery,Cash,Jags Parbha,TBC,Insert Trello Board reference,London
+form-finder,Form Finder,"Lift and shift workpackge of various forms, as well as content, navigation, storage and retention improvements",Cross Justice,Ideas Backlog,TBC,TBC,TBC,Insert Trello Board reference,London
+open-data,Open Data,Pre-discovery,Cross Justice,Ideas Backlog,TBC,TBC,TBC,Insert Trello Board reference,London
+services-build,Services Build,Pre-discovery,Cross Justice,Ideas Backlog,TBC,TBC,TBC,Insert Trello Board reference,London
+hr-product,HR Product (TBC),Workpackage to explore the workings of the Portfolio,Digital HQ,Consultancy,Time Saving,Keira Poland,Keira Poland,Insert Trello Board reference,London
+people-finder,People Finder,Pre-discovery,Digital HQ,Ideas Backlog,TBC,TBC,TBC,Insert Trello Board reference,London
+victims-commissioner,Victims Commissioner,Pre-discovery,Tactical Products,Ideas Backlog,TBC,TBC,TBC,Insert Trello Board reference,London
+prison-probation-jobs,Prison & Probation Jobs,Non-transactional website for the prison and probation services,Tactical Products,Delivery,Cash,Andy Robb,TBC,Insert Trello Board reference,London
+support-optimisation,Support and optimisation,Various,Plus,TBC,TBC,TBC,TBC,TBC,TBC
+consultancy-training,Consultancy and training,Various,Plus,TBC,TBC,TBC,TBC,TBC,TBC
